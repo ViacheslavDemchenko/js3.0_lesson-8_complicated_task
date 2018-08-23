@@ -103,7 +103,7 @@ function calcScroll() {
 
 //Перебор циклом все ссылок и определение той, на которой был сделан клик
   for (let i = 0; i < links.length; i++) {
-    links[i].onclick = function() {
+    links[i].onclick = function(event) {
       //Определение и округление текущего расстояния от верха документа
       let scrollTop = Math.round(body.scrollTop || elements.scrollTop);
       if (this.hash !== '') {
