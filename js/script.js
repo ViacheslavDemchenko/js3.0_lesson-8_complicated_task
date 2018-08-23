@@ -111,7 +111,8 @@ function calcScroll() {
         event.preventDefault();
 //Получение элемента, к которому ведет якорь нажатой ссылки
         let hashElement = document.getElementById(this.hash.substring(1)),
-			hashElementTop = 0;
+//Задел в 80px, чтобы при прокрутке меню не закрывало заголовок секции
+			hashElementTop = -80;
 //Вычисление через цикл расстояния от верха до элемента, к которому ведет нажатая ссылка
         while (hashElement.offsetParent) {
           hashElementTop += hashElement.offsetTop;
@@ -155,7 +156,9 @@ function smoothScroll(from, to, hash) {
     ) {
       clearInterval(move);
 //Добавление атрибута hash в url после прокрутки (добавляется к адресной строке в браузере)
-      window.location.hash = hash;
+      history.replaceState(history.state, document.title, location.href.replace(/#.*$/g, '') 
+      + hash);
+
     } else {
       body.scrollTop += speed;
       elements.scrollTop += speed;
