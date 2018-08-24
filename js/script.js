@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 
-let deadline = '2018-08-23 23:59:59';//Задаем конечную дату
+let deadline = '2018-08-27 23:59:59';//Задаем конечную дату
 
 //Функция расчета оставшегося времени
 function getTimeRemaining(endtime) {
@@ -170,3 +170,6 @@ function smoothScroll(from, to, hash) {
 }
 
 });
+
+
+
